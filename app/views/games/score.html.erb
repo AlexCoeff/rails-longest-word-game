@@ -1,0 +1,10 @@
+<% score = 0 %>
+<% if @included == false %>
+  <p>Sorry but test can't be built out of <%= @letters.join(", ") %></p>
+<% elsif @included == true && @english_word == false %>
+  <p>The word is valid according to the grid, but is not a valid English word</p>
+<% elsif @included == true && @english_word == true %>
+  <p>"Congrats, the word is valid according to the grid and is an English word, your score is <%= score += @word.length %></p>
+<% end %>
+
+<%= link_to "Play again", new_path %>
